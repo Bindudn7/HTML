@@ -1,0 +1,408 @@
+Basic python codes:
+1. Exceptions in Python automation scripts
+ Exception handling is done using try-except:
+try:
+	element = driver.find_element(By.ID, “nonexistent”)
+except NoSuchElementException:
+	print(“Element not found”)
+	
+	
+2. Handle API(applicaton programmin interface) testing using Python automation
+Use the requests library:
+import requests
+response = requests.get(“https://api.example.com/data”)
+assert response.status_code == 200
+print(response.json())
+It helps validate API responses.
+
+3.even odd codes
+n=input(input())
+if n%2==0:
+	print("even")
+else:
+	print("odd")
+
+4.factorial of n
+def fact(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return n*fact(n-1)
+n=6
+print(fact(n))
+
+5. reverse of string
+s=input()
+s_rev=s[::-1]
+
+6. palindrome in c
+127==721
+127%10=7
+rev=0*10+7=7
+n=127/10=12
+
+12%10=2
+rev=7*10+2=72
+12/10=1
+72*10+1=721
+
+
+#include <stdio.h>
+int main(){
+int n,temp;
+pf("enter n value",n);
+temp=n
+rev=0
+while(n!=0){
+	r=n%10
+	rev=rev*10+r
+	n=n/10
+}
+if rev==temp:
+printf("palindrome")
+else
+printf("not a palindrome)
+
+7. vowels in string
+vol="aeiouAEIOU"
+s=input()
+count=0
+for i in s:
+	if i in vol:
+count+=1
+print(count)
+
+8.merge 2 dict in python
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+merged = {**dict1, **dict2}
+
+9.Fabinacoo:
+
+n=int(input())
+l=[0,1]
+for i in range(n-2):
+    l.append(l[-1]+l[-2])
+print(l)
+
+a=0
+b=1
+for i in range(10):
+    print(a,end=" ")
+    a,b=b,a+b
+	
+10. count number of times repeated:	
+l=[1,2,3,4,4,'apple','apple']
+d={}
+for i in range(len(l)):
+    d[l[i]]=l.count(l[i])
+print(d)
+
+11.reverse of string and lists
+my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+for i in range(len(my_list)-1,-1,-1):
+    print(my_list[i],end=" ")
+print("\n")
+s="Python"
+s1=""
+l=[]
+for i in range(len(s)-1,-1,-1):
+    l.append(s[i])
+print("".join(l))
+for c in s:
+    s1=c+s1
+print(s1)
+
+12. pattern 
+print("Number Pattern:")
+
+# Outer loop for the number of rows
+for i in range(1, 6):
+    # Inner loop to print numbers in each row
+    for j in range(1, i + 1):
+        print(j, end=' ')
+    # Move to the next line after each row is printed
+    print("")
+	
+	
+13. pattern in letters
+n=5
+a=65
+for i in range(n):
+    l=chr(a+i)
+    for j in range(i+1):
+        print(l,end="")
+    print("")
+    
+o/p:
+A 
+B B 
+C C C 
+D D D D 
+E E E E E
+
+14. print Hollow square pattern
+n=5
+for i in range(n):
+    for j in range(n):
+        if i==0 or i==n-1 or j==0 or j==n-1:
+            print("*",end="")
+        else:
+            print(" ",end="")
+    print()
+        
+or 
+
+n=5
+for i in range(1,n+1):
+    if i==1 or i==n:
+        print("*"*n)
+    else:
+        print("*"+"   "+"*")
+
+        
+15. Dictionary Filter: Extract pairs where value exceeds a threshold.
+scores = {"Alice": 85, "Bob": 70, "Charlie": 95, "David": 60}
+t=75
+d={}
+for i,j in scores.items():
+    if j>75:
+        d[i]=j
+print(d)
+
+	
+16.List Rotation: Rotate elements left by k positions
+nums = [1, 2, 3, 4, 5]
+k = 2
+
+# Perform the rotation k times
+for _ in range(k):
+    # Remove the first element
+    first_element = nums.pop(0)
+    # Move it to the end
+    nums.append(first_element)
+
+print("Rotated List:", nums)
+
+	
+17.Perfect number check  sum of divisors excluding itself is equal to n
+num = 28
+sum = 0
+for i in range(1, (num // 2) + 1):
+    if num % i == 0:
+        sum += i
+if sum == num:
+    print(f"{num} is a Perfect Number")
+else:
+    print(f"{num} is not a Perfect Number")
+	
+	
+18. Binary to decimal conversion using loop
+s="1101"
+n=int(s)
+a=0
+for i in range(n):
+    r=n%10
+    a=a+r*(2**i)
+    n=n//10
+print(a)
+
+or 
+s="1101"
+s1=s[::-1]
+a=0
+for i in range(len(s1)):
+    if s1[i]=='1':
+        a=a+(2**i)
+print(a)
+
+19. Display all prime numbers within a range
+l=[]
+for i in range(25,51):
+    c=0
+    for j in range(2,i):
+        if i%j==0:
+            c+=1
+    if c<1:
+        l.append(i)
+print(l)
+   
+
+20.sum of series 2 + 22 + 222 + 2222 + 22222
+n=5
+s=0
+l=[]
+start=2
+for i in range(0,5):
+    s=s+start
+    start=start*10+2
+print(s)
+        
+21.Nested list search (2D matrix coordinates)
+matrix = [[10, 20], [30, 40], [50, 60]]
+target = 30
+d={}
+
+for i in matrix:
+    for j in i:
+        if j==target:
+            x=i.index(target)
+            y=matrix.index(i)
+
+print("column",x)
+print("row",y)
+
+"""0  1
+0=10 20
+1=30 40
+2=50 60"""
+
+or 
+
+matrix = [
+    [10, 20],
+    [30, 40],
+    [50, 60]
+]
+target = 30
+
+matrix = [[10, 20], [30, 40], [50, 60]]
+target = 50
+for index1,list1 in enumerate(matrix):
+    for value_index1,value in enumerate(list1):
+        if value==target:
+            print("row is {} and column is {}".format(index1,value_index1))
+    	break
+
+
+22.Dictionary Merging with Logic if key is same in both dict then add the value otherwise print as it is
+dict_a = {'a': 10, 'b': 20}
+dict_b = {'b': 5, 'c': 15}
+d=dict_a.copy()
+for i,j in dict_b.items():
+    d[i]=d.get(i,0)+j
+print(d)
+            
+			
+23.Flatten a Nested List
+def nestedloop(l1):
+    l=[]
+    for i in l1:
+        if isinstance(i, list):
+            l.extend(nestedloop(i))
+        else:
+            l.append(i)
+    return l
+l1=[1, [2, 3], [4, [5, 6]], 7]
+result=nestedloop(l1)
+print(result)
+   
+o/p:[1, 2, 3, 4, 5, 6, 7]   
+
+
+24. 
+            
+			
+			
+
+
+		
+
+Write a python code for your feature
+Rear closures
+vhicle has power rear closure,exterior sw and keyfob in the zone and auth happened
+If exterior sw ==1:
+	
+	
+CALP:
+// Variables
+variables
+{
+  msTimer speedTimer;   // Timer for periodic speed updates
+  int vehicleSpeed = 0; // Current simulated speed
+}
+
+// Initialization
+on start
+{
+  write("Speed Sensor ECU Simulation Started");
+  setTimer(speedTimer, 100); // Trigger every 100 ms
+}
+
+// Periodic broadcast of speed
+on timer speedTimer
+{
+  message 0x200 speedMsg;   // CAN message with ID 0x200
+  speedMsg.len = 1;
+  speedMsg.byte(0) = vehicleSpeed; // Put speed in first byte
+  output(speedMsg);
+
+  // Increment speed for simulation (looping 0–250 km/h)
+  vehicleSpeed = (vehicleSpeed + 5) % 251;
+
+  setTimer(speedTimer, 100); // Restart timer
+}
+
+// Respond to diagnostic request (UDS Read Data By Identifier)
+on message 0x7E0
+{
+  if (this.byte(0) == 0x22) // Service ID: Read Data By Identifier
+  {
+    message diagResp;
+    diagResp.id = 0x7E8;     // ECU response ID
+    diagResp.len = 3;
+    diagResp.byte(0) = 0x62; // Positive response (0x22 + 0x40)
+    diagResp.byte(1) = 0xF1; // Example DID high byte
+    diagResp.byte(2) = vehicleSpeed; // Return current speed
+    output(diagResp);
+
+    write("Responded to UDS Read DID with speed = %d km/h", vehicleSpeed);
+  }
+}
+
+
+2.CAPL code for  When the user presses the R key, this script sends a UDS diagnostic request to reset the ECU 
+// Send a diagnostic request (UDS service 0x10 - ECU Reset)
+on key 'r'
+{
+  message diagReq;
+  diagReq.id = 0x7E0;          // Tester-to-ECU ID
+  diagReq.len = 2;
+  diagReq.byte(0) = 0x10;      // Service ID: ECU Reset
+  diagReq.byte(1) = 0x01;      // Sub-function: Hard Reset
+  output(diagReq);
+  write("Sent ECU Reset request");
+}
+
+3.This script sends a CAN message with ID 0x200 every second, simulating an ECU periodically broadcasting data.
+// Send a CAN message every 1 second
+variables
+{
+  msTimer sendTimer;
+}
+
+on start
+{
+  setTimer(sendTimer, 1000); // 1000 ms = 1 second
+}
+
+on timer sendTimer
+{
+  message 0x200 msg;   // Create message with ID 0x200
+  msg.byte(0) = 0x55;  // First data byte
+  output(msg);         // Transmit message
+  setTimer(sendTimer, 1000); // Restart timer
+}
+
+
+4. This script listens for a CAN message with ID 0x100 and prints the vehicle speed contained in the first data byte.
+// This function is triggered when a CAN message with ID 0x100 is received
+on message 0x100
+{
+  write("Received message with ID 0x100");
+  // Access data bytes
+  int speed = this.byte(0);   // First byte = speed
+  write("Vehicle speed = %d km/h", speed);
+}
+
+5. 
