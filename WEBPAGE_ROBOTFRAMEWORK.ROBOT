@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 Test Teardown    Close Browser
 
 *** Variables ***
-
+global Variables
 *** Test Cases ***
 open the browser if credentials are correct
     open the browser link which is provided
